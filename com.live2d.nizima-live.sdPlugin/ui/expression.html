@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>Expression Action</title>
+    <meta charset="utf-8" />
+    <script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="settings.js"></script>
+    <sdpi-item label="Setting" class="horizontal-flex" id="setting-item">
+        <div class="flex-row">
+            Port:
+            <sdpi-textfield
+                id="port"
+                maxlength="5"
+                pattern="^[1-9]\d{3,}$"
+                placeholder="22022"
+                required
+            ></sdpi-textfield>
+            <sdpi-button id="connect-btn">Connect</sdpi-button>
+        </div>
+    </sdpi-item>
+
+    <sdpi-item label="Type">
+        <sdpi-select id="type-select" setting="actionType" default="toggle">
+            <option value="toggle">Start/Stop</option>
+            <option value="start">Start</option>
+            <option value="stop">Stop</option>
+            <option value="clear">Clear</option>
+        </sdpi-select>
+    </sdpi-item>
+    <sdpi-item label="Expression" id="exp-item">
+        <sdpi-select
+            datasource="getExpressionList"
+            setting="selectedExpression"
+            loading="Fetching expressions...">
+        </sdpi-select>
+    </sdpi-item>
+    <script>
+        // Expressionの表示制御
+        const typeSelect = document.getElementById('type-select');
+        const expItem = document.getElementById('exp-item');
+        function updateExpVisibility() {
+            requestAnimationFrame(() => {
+                const isClear = typeSelect.value === 'clear';
+                expItem.style.display = isClear ? 'none' : '';
+            });
+        }
+        typeSelect.addEventListener('input', updateExpVisibility); // change ではない
+        // 初期表示
+        updateExpVisibility();
+    </script>
+</body>
+</html>

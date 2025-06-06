@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>Motion Action</title>
+    <meta charset="utf-8">
+    <script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="settings.js"></script>
+    <sdpi-item label="Setting" class="horizontal-flex" id="setting-item">
+        <div class="flex-row">
+            Port:
+            <sdpi-textfield
+                id="port"
+                maxlength="5"
+                pattern="^[1-9]\d{3,}$"
+                placeholder="22022"
+                required
+            ></sdpi-textfield>
+            <sdpi-button id="connect-btn">Connect</sdpi-button>
+        </div>
+    </sdpi-item>
+
+    <sdpi-item label="Type">
+        <sdpi-select id="type-select" setting="actionType" default="start">
+            <option value="start">Start</option>
+            <option value="stop">Stop</option>
+            <option value="clear">Clear</option>
+        </sdpi-select>
+    </sdpi-item>
+    <sdpi-item label="Motion" id="motion-item">
+        <sdpi-select
+            datasource="getMotionList"
+            setting="selectedMotion"
+            loading="Fetching motions...">
+        </sdpi-select>
+    </sdpi-item>
+    <script>
+        // Motionの表示制御
+        const typeSelect = document.getElementById('type-select');
+        const motionItem = document.getElementById('motion-item');
+        function updateMotionVisibility() {
+            // 即時反映させるためrequestAnimationFrameを呼ぶ
+            requestAnimationFrame(() => {
+                const isStop = typeSelect.value === 'stop';
+                const isClear = typeSelect.value === 'clear';
+                motionItem.style.display = isStop || isClear ? 'none' : '';
+            });
+        }
+        typeSelect.addEventListener('input', updateMotionVisibility); // change ではない
+        // 初期表示
+        updateMotionVisibility();
+    </script>
+</body>
+</html>

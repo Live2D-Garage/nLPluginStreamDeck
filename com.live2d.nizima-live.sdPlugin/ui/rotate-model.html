@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>Rotate Model Settings</title>
+    <meta charset="utf-8" />
+    <script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="settings.js"></script>
+    <sdpi-item label="Setting" class="horizontal-flex" id="setting-item">
+        <div class="flex-row">
+            Port:
+            <sdpi-textfield
+                id="port"
+                maxlength="5"
+                pattern="^[1-9]\d{3,}$"
+                placeholder="22022"
+                required
+            ></sdpi-textfield>
+            <sdpi-button id="connect-btn">Connect</sdpi-button>
+        </div>
+    </sdpi-item>
+
+    <sdpi-item label="Increment By">
+        <sdpi-range setting="incrementBy" min="1" max="5" step="1" default="1" showlabels></sdpi-range>
+    </sdpi-item>
+    <div style="margin-top:10px; color:gray; font-size:12px;">Rotating the dial will rotate the model.</div>
+    <div style="margin-top:10px; color:gray; font-size:12px;">Pressing the dial will reset.</div>
+</body>
+</html>

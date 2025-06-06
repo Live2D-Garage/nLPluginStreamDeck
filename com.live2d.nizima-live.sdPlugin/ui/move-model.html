@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>Move Model Settings</title>
+    <meta charset="utf-8" />
+    <script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script src="settings.js"></script>
+    <sdpi-item label="Setting" class="horizontal-flex" id="setting-item">
+        <div class="flex-row">
+            Port:
+            <sdpi-textfield
+                id="port"
+                maxlength="5"
+                pattern="^[1-9]\d{3,}$"
+                placeholder="22022"
+                required
+            ></sdpi-textfield>
+            <sdpi-button id="connect-btn">Connect</sdpi-button>
+        </div>
+    </sdpi-item>
+
+    <sdpi-item label="Absolute">
+        <sdpi-checkbox setting="absolute" label="Move in absolute coordinates"></sdpi-checkbox>
+    </sdpi-item>
+    <sdpi-item label="Position X">
+        <sdpi-range setting="positionX" min="-3" max="3" step="0.01" default="0" showlabels></sdpi-range>
+    </sdpi-item>
+    <sdpi-item label="Position Y">
+        <sdpi-range setting="positionY" min="-3" max="3" step="0.01" default="0" showlabels></sdpi-range>
+    </sdpi-item>
+    <sdpi-item label="Rotation">
+        <sdpi-range setting="rotation" min="-180" max="180" step="1" default="0" showlabels></sdpi-range>
+    </sdpi-item>
+    <sdpi-item label="Scale">
+        <sdpi-range setting="scale" min="0.1" max="5" step="0.1" default="1" showlabels></sdpi-range>
+    </sdpi-item>
+    <sdpi-item label="Delay(seconds)">
+        <sdpi-range setting="delay" min="0" max="5" step="0.01" default="1" showlabels></sdpi-range>
+    </sdpi-item>
+    <sdpi-item label="Interpolation">
+        <sdpi-select setting="interpolation" default="Linear">
+            <option value="Linear">Linear</option>
+            <option value="InQuad">InQuad</option>
+            <option value="OutQuad">OutQuad</option>
+            <option value="InOutQuad">InOutQuad</option>
+            <option value="OutInQuad">OutInQuad</option>
+            <option value="InCubic">InCubic</option>
+            <option value="OutCubic">OutCubic</option>
+            <option value="InOutCubic">InOutCubic</option>
+            <option value="OutInCubic">OutInCubic</option>
+            <option value="InQuart">InQuart</option>
+            <option value="OutQuart">OutQuart</option>
+            <option value="InOutQuart">InOutQuart</option>
+            <option value="OutInQuart">OutInQuart</option>
+            <option value="InQuint">InQuint</option>
+            <option value="OutQuint">OutQuint</option>
+            <option value="InOutQuint">InOutQuint</option>
+            <option value="OutInQuint">OutInQuint</option>
+            <option value="InSine">InSine</option>
+            <option value="OutSine">OutSine</option>
+            <option value="InOutSine">InOutSine</option>
+            <option value="OutInSine">OutInSine</option>
+            <option value="InExpo">InExpo</option>
+            <option value="OutExpo">OutExpo</option>
+            <option value="InOutExpo">InOutExpo</option>
+            <option value="OutInExpo">OutInExpo</option>
+            <option value="InCirc">InCirc</option>
+            <option value="OutCirc">OutCirc</option>
+            <option value="InOutCirc">InOutCirc</option>
+            <option value="OutInCirc">OutInCirc</option>
+            <option value="InElastic">InElastic</option>
+            <option value="OutElastic">OutElastic</option>
+            <option value="InOutElastic">InOutElastic</option>
+            <option value="OutInElastic">OutInElastic</option>
+            <option value="InBack">InBack</option>
+            <option value="OutBack">OutBack</option>
+            <option value="InOutBack">InOutBack</option>
+            <option value="OutInBack">OutInBack</option>
+            <option value="InBounce">InBounce</option>
+            <option value="OutBounce">OutBounce</option>
+            <option value="InOutBounce">InOutBounce</option>
+            <option value="OutInBounce">OutInBounce</option>
+        </sdpi-select>
+</body>
+
+</html>

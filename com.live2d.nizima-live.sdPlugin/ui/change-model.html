@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>Change Model Settings</title>
+    <meta charset="utf-8" />
+    <script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script src="settings.js"></script>
+    <sdpi-item label="Setting" class="horizontal-flex" id="setting-item">
+        <div class="flex-row">
+            Port:
+            <sdpi-textfield
+                id="port"
+                maxlength="5"
+                pattern="^[1-9]\d{3,}$"
+                placeholder="22022"
+                required
+            ></sdpi-textfield>
+            <sdpi-button id="connect-btn">Connect</sdpi-button>
+        </div>
+    </sdpi-item>
+
+    <sdpi-item label="Model">
+        <sdpi-select
+            id="selectModel"
+            datasource="getModelList"
+            setting="selectedPath"
+            loading="Fetching models...">
+        </sdpi-select>
+    </sdpi-item>
+</body>
+</html>

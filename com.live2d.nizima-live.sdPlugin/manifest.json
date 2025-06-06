@@ -1,0 +1,135 @@
+{
+	"Name": "nizima LIVE",
+	"Version": "1.0.0.0",
+	"Author": "Live2D",
+	"Actions": [
+		{
+			"Name": "Change Model",
+			"UUID": "com.live2d.nizima-live.change-model",
+			"Icon": "imgs/actions/category/nizima_live_w",
+			"Tooltip": "Show current model name.",
+			"PropertyInspectorPath": "ui/change-model.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/key/nizima_live_w",
+					"TitleAlignment": "bottom"
+				}
+			]
+		},
+		{
+			"Name": "Move Model",
+			"UUID": "com.live2d.nizima-live.move-model",
+			"Icon": "imgs/actions/category/nizima_live_w",
+			"Tooltip": "Move the model.",
+			"PropertyInspectorPath": "ui/move-model.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/key/nizima_live_w",
+					"TitleAlignment": "bottom"
+				}
+			]
+		},
+		{
+			"Name": "Expression",
+			"UUID": "com.live2d.nizima-live.expression",
+			"Icon": "imgs/actions/category/nizima_live_w",
+			"Tooltip": "Set an expression on the model.",
+			"PropertyInspectorPath": "ui/expression.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/key/nizima_live_w",
+					"TitleAlignment": "bottom"
+				}
+			]
+		},
+		{
+			"Name": "Motion",
+			"UUID": "com.live2d.nizima-live.motion",
+			"Icon": "imgs/actions/category/nizima_live_w",
+			"Tooltip": "Play a motion on the model.",
+			"PropertyInspectorPath": "ui/motion.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/key/nizima_live_w",
+					"TitleAlignment": "bottom"
+				}
+			]
+		},
+		{
+			"Name": "Rotate Model",
+			"UUID": "com.live2d.nizima-live.rotate-model",
+			"Icon": "imgs/actions/category/nizima_live_w",
+			"Tooltip": "Rotate model with dial.",
+			"PropertyInspectorPath": "ui/rotate-model.html",
+			"Controllers": [
+				"Encoder"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/key/nizima_live_w",
+					"TitleAlignment": "middle"
+				}
+			]
+		},
+		{
+			"Name": "Zoom Model",
+			"UUID": "com.live2d.nizima-live.zoom-model",
+			"Icon": "imgs/actions/category/nizima_live_w",
+			"Tooltip": "Zoom model with dial.",
+			"PropertyInspectorPath": "ui/zoom-model.html",
+			"Controllers": [
+				"Encoder"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/key/nizima_live_w",
+					"TitleAlignment": "middle"
+				}
+			]
+		}
+	],
+	"Category": "nizima LIVE",
+	"CategoryIcon": "imgs/plugin/nizima_live_p",
+	"CodePath": "bin/plugin.js",
+	"Description": "Control nizima LIVE from Stream Deck",
+	"Icon": "imgs/plugin/marketplace",
+	"SDKVersion": 2,
+	"Software": {
+		"MinimumVersion": "6.5"
+	},
+	"OS": [
+		{
+			"Platform": "mac",
+			"MinimumVersion": "10.15"
+		},
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		}
+	],
+	"ApplicationsToMonitor": {
+		"mac": [
+			"com.live2d.nizima"
+		],
+		"windows": [
+			"nizima_live.exe"
+		]
+	},
+	"Nodejs": {
+		"Version": "20",
+		"Debug": "enabled"
+	},
+	"UUID": "com.live2d.nizima-live"
+}

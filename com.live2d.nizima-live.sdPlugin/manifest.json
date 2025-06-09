@@ -1,6 +1,6 @@
 {
 	"Name": "nizima LIVE",
-	"Version": "1.0.0.0",
+	"Version": "1.0.1.0",
 	"Author": "Live2D",
 	"Actions": [
 		{
@@ -101,7 +101,7 @@
 		}
 	],
 	"Category": "nizima LIVE",
-	"CategoryIcon": "imgs/plugin/nizima_live_p",
+	"CategoryIcon": "imgs/plugin/nizima_live_w",
 	"CodePath": "bin/plugin.js",
 	"Description": "Control nizima LIVE from Stream Deck",
 	"Icon": "imgs/plugin/marketplace",

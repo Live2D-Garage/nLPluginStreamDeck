@@ -17,7 +17,7 @@ type GlobalSettings = {
 // nLPluginインスタンスを作成
 const nLPlugin = new NLPlugin("StreamDeck");
 nLPlugin.developer = "Live2D Inc.";
-nLPlugin.version = "1.0.0";
+nLPlugin.version = "1.0.1";
 
 nLPlugin.addEventListener("NotifyCurrentModelChanged", setCurrentModel);
 nLPlugin.addEventListener("NotifyEnabledChanged", (message: any) => {
